@@ -101,9 +101,9 @@ namespace Tema10._2
             Assert.AreEqual(-6, total);
         }
 
-        //Substract test 3 -> Result to be negative
+        //Substract test 3 -> substract decimal number with double number
         [Test]
-        public void SubstractNeg()
+        public void SubstractDifNum()
         {
             GenericCalculator sumTest1 = new GenericCalculator();
             dynamic num1 = 10.0001;
@@ -114,6 +114,21 @@ namespace Tema10._2
 
             //Assert
             Assert.AreEqual(3.1101, total);
+        }
+
+        //Substract test 4 -> substact 2 negative numbers
+        [Test]
+        public void Substract2Neg()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = -19;
+            dynamic num2 = -6;
+
+            //Act
+            dynamic total = sumTest1.Subtract(num1, num2);
+
+            //Assert
+            Assert.AreEqual(-25, total);
         }
 
     }
