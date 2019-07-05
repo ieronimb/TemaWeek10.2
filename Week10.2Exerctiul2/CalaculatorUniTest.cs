@@ -131,5 +131,127 @@ namespace Tema10._2
             Assert.AreEqual(-25, total);
         }
 
+        //Multiply test 1 
+        [Test]
+        public void Multyply()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 6;
+            dynamic num2 = 5;
+
+            //Act
+            dynamic total = sumTest1.Multiply(num1, num2);
+
+            //Assert
+            Assert.AreEqual(30, total);
+        }
+
+        //Multiply test 2 -> float num and int number
+        [Test]
+        public void MultyplyFloatInt()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 6.04f;
+            dynamic num2 = 5;
+
+            //Act
+            dynamic total = sumTest1.Multiply(num1, num2);
+
+            //Assert
+            Assert.AreEqual(30.2, total);
+        }
+
+
+        //Multiply test 3 -> 0 and int number
+        [Test]
+        public void MultyplyZeroInt()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 0;
+            dynamic num2 = 5;
+
+            //Act
+            dynamic total = sumTest1.Multiply(num1, num2);
+
+            //Assert
+            Assert.AreEqual(0, total);
+        }
+
+        //Multiply test 3 -> neg numb and int number
+        [Test]
+        public void MultyplyNegPos()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = -5;
+            dynamic num2 = 5;
+
+            //Act
+            dynamic total = sumTest1.Multiply(num1, num2);
+
+            //Assert
+            Assert.AreEqual(-25, total);
+        }
+
+        //Divide test 1 
+        [Test]
+        public void Divide()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 30;
+            dynamic num2 = 5;
+
+            //Act
+            dynamic total = sumTest1.Divide(num1, num2);
+
+            //Assert
+            Assert.AreEqual(6, total);
+        }
+
+        //Divide test 2 -> Int to 0
+        [Test]
+        public void DivideIntToZero()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 30;
+            dynamic num2 = 0;
+
+            //Act
+            dynamic total = sumTest1.Divide(num1, num2);
+
+            //Assert            
+            Assert.AreEqual(0, total);
+            Assert.Throws<DivideByZeroException>(() => sumTest1.Divide(num1, num2));
+        }
+
+        //Divide test 3 -> 0 to int
+        [Test]
+        public void DivideZeroToInt()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 0;
+            dynamic num2 = 10;
+
+            //Act
+            dynamic total = sumTest1.Divide(num1, num2);
+
+            //Assert            
+            Assert.AreEqual(0, total);
+            Assert.Throws<DivideByZeroException>(() => sumTest1.Divide(num1, num2));
+        }
+
+        //Divide test 3 -> 2 doubles
+        [Test]
+        public void DivideDoubles()
+        {
+            GenericCalculator sumTest1 = new GenericCalculator();
+            dynamic num1 = 15.55;
+            dynamic num2 = 3.33;
+
+            //Act
+            dynamic total = sumTest1.Divide(num1, num2);
+
+            //Assert            
+            Assert.AreEqual(4.66966966966967, total);            
+        }
     }
 }

@@ -42,12 +42,13 @@ namespace StringExercitiul1
         public void CheckTest3Null()
         {
             ReverseString str = new ReverseString();
-            string input = "";
+            string input = null;
 
             //Act
             string output = ReverseString.ReverseLettersOnly(input);
 
             //Asert
+            Assert.AreEqual(null, output);
             Assert.Throws<ArgumentNullException>(() => ReverseString.ReverseLettersOnly(output));
         }
 
