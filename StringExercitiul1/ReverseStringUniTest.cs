@@ -11,7 +11,8 @@ namespace StringExercitiul1
 {
     [TestFixture]
     class ReverseStringUniTest
-    {        
+    {  
+        [Test]
         public void CheckTest1()
         {
             ReverseString str = new ReverseString();
@@ -22,7 +23,9 @@ namespace StringExercitiul1
 
             //Asert
             Assert.AreEqual("dc-ba", output);
-        }        
+        }
+
+        [Test]
         public void CheckTest2()
         {
             ReverseString str = new ReverseString();
@@ -35,6 +38,7 @@ namespace StringExercitiul1
             Assert.AreEqual("j-Ih-gfE-dCba", output);
         }
 
+        [Test]
         public void CheckTest3Null()
         {
             ReverseString str = new ReverseString();
@@ -47,6 +51,7 @@ namespace StringExercitiul1
             Assert.Throws<ArgumentNullException>(() => ReverseString.ReverseLettersOnly(output));
         }
 
+        [Test]
         public void CheckTest4()
         {
             ReverseString str = new ReverseString();
